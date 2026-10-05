@@ -106,10 +106,17 @@ p {
   align-items: center;
 }
 
-.nav a {
+.nav a,
+.nav-link {
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ghost-button,
@@ -281,6 +288,125 @@ p {
 
 .panel-header h3 {
   font-size: 1.35rem;
+}
+
+.journal-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.journal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.journal-item {
+  padding: 16px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 36, 48, 0.05);
+}
+
+.journal-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.mood-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(159, 199, 190, 0.18);
+  color: var(--sage-deep);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journal-item time {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.journal-item p {
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.empty-state {
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px dashed rgba(31, 36, 48, 0.12);
+  border-radius: 16px;
+  padding: 18px 16px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 310px;
+  overflow-y: auto;
+  padding-right: 4px;
+  margin-bottom: 18px;
+}
+
+.message {
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.bubble {
+  display: inline-block;
+  max-width: 82%;
+  padding: 12px 14px;
+  border-radius: 18px;
+  line-height: 1.6;
+}
+
+.message.bot .bubble {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 36, 48, 0.05);
+  color: var(--ink);
+}
+
+.message.user .bubble {
+  background: linear-gradient(135deg, rgba(159, 199, 190, 0.22), rgba(215, 211, 245, 0.32));
+  color: var(--ink);
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-form input {
+  flex: 1;
+  border: 1px solid rgba(31, 36, 48, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 12px 14px;
+  color: var(--ink);
+}
+
+.chat-form input:focus {
+  outline: 2px solid rgba(95, 141, 131, 0.18);
 }
 
 .time-badge {

@@ -34,7 +34,7 @@
           <a href="#insights">Insights</a>
         </nav>
 
-        <button class="ghost-button">View journal</button>
+        <a href="#journalArchive" class="ghost-button nav-link">View journal</a>
       </header>
 
       <main class="dashboard" id="overview">
@@ -89,9 +89,9 @@
             ></textarea>
 
             <div class="prompt-row" aria-label="Reflection prompts">
-              <button class="mini-tag">What am I grateful for?</button>
-              <button class="mini-tag">What drained my energy?</button>
-              <button class="mini-tag">What do I need tomorrow?</button>
+              <button class="mini-tag" data-prompt="What am I grateful for today?">What am I grateful for?</button>
+              <button class="mini-tag" data-prompt="What drained my energy today?">What drained my energy?</button>
+              <button class="mini-tag" data-prompt="What do I need tomorrow?">What do I need tomorrow?</button>
             </div>
 
             <div class="panel-actions">
@@ -150,6 +150,43 @@
               <strong id="savedCount">0</strong>
             </div>
           </aside>
+        </section>
+
+        <section id="journalArchive" class="journal-layout">
+          <article class="panel journal-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">Journal</p>
+                <h3>Saved reflections</h3>
+              </div>
+            </div>
+            <ul id="journalList" class="journal-list" aria-live="polite"></ul>
+          </article>
+
+          <article class="panel chatbot-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">AI guide</p>
+                <h3>Reflection companion</h3>
+              </div>
+            </div>
+
+            <div id="chatMessages" class="chat-messages" aria-live="polite">
+              <div class="message bot">
+                <span class="bubble">Hi, I’m your reflection guide. Tell me what’s on your mind today.</span>
+              </div>
+            </div>
+
+            <form id="chatForm" class="chat-form">
+              <input
+                id="chatInput"
+                type="text"
+                placeholder="Ask about your mood, stress, focus, or goals..."
+                aria-label="Chat with your reflection assistant"
+              />
+              <button type="submit" class="primary-button">Send</button>
+            </form>
+          </article>
         </section>
 
         <section class="bottom-grid" id="insights">
