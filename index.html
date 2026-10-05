@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SelfReflection</title>
+    <meta
+      name="description"
+      content="A calm, modern self-reflection dashboard for mindful journaling."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">S</div>
+          <div>
+            <p class="eyebrow">Reflective living</p>
+            <h1>SelfReflection</h1>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#overview">Overview</a>
+          <a href="#journal">Journal</a>
+          <a href="#insights">Insights</a>
+        </nav>
+
+        <button class="ghost-button">View journal</button>
+      </header>
+
+      <main class="dashboard" id="overview">
+        <section class="hero panel">
+          <div class="hero-copy">
+            <p class="eyebrow accent">Daily check-in</p>
+            <h2>Pause. Notice. Grow.</h2>
+            <p class="hero-text">
+              Take a moment to understand your energy, celebrate your progress,
+              and set a clear intention for tomorrow.
+            </p>
+
+            <div class="hero-actions">
+              <button class="primary-button">Start reflection</button>
+              <button class="secondary-button">Review habit</button>
+            </div>
+          </div>
+
+          <div class="hero-stats" aria-label="Reflection metrics">
+            <div class="stat-card">
+              <span class="label">Mood</span>
+              <strong>Calm</strong>
+              <small>+12% from yesterday</small>
+            </div>
+            <div class="stat-card">
+              <span class="label">Focus</span>
+              <strong>78%</strong>
+              <small>Strong progress</small>
+            </div>
+            <div class="stat-card">
+              <span class="label">Gratitude</span>
+              <strong>3 notes</strong>
+              <small>Mindful reminder</small>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-grid" id="journal">
+          <article class="panel reflection-panel">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow accent">Today</p>
+                <h3>Reflection prompt</h3>
+              </div>
+              <span class="time-badge">8 min</span>
+            </div>
+
+            <textarea
+              id="reflectionInput"
+              aria-label="Write your self-reflection"
+              placeholder="What felt meaningful today? What challenged me, and what helped me move forward?"
+            ></textarea>
+
+            <div class="prompt-row" aria-label="Reflection prompts">
+              <button class="mini-tag">What am I grateful for?</button>
+              <button class="mini-tag">What drained my energy?</button>
+              <button class="mini-tag">What do I need tomorrow?</button>
+            </div>
+
+            <div class="panel-actions">
+              <button id="saveReflection" class="primary-button">Save reflection</button>
+              <span id="saveStatus" class="save-status" aria-live="polite">Not saved yet</span>
+            </div>
+          </article>
+
+          <aside class="panel mood-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">Check-in</p>
+                <h3>How do you feel?</h3>
+              </div>
+            </div>
+
+            <div class="mood-options" aria-label="Mood selector">
+              <button class="mood-button active" data-mood="Calm">
+                <span>😊</span>
+                Calm
+              </button>
+              <button class="mood-button" data-mood="Happy">
+                <span>😄</span>
+                Happy
+              </button>
+              <button class="mood-button" data-mood="Focused">
+                <span>🧠</span>
+                Focused
+              </button>
+              <button class="mood-button" data-mood="Tired">
+                <span>😴</span>
+                Tired
+              </button>
+              <button class="mood-button" data-mood="Anxious">
+                <span>😟</span>
+                Anxious
+              </button>
+              <button class="mood-button" data-mood="Reflective">
+                <span>🌙</span>
+                Reflective
+              </button>
+            </div>
+
+            <div class="meter-block">
+              <div class="meter-head">
+                <span>Energy</span>
+                <strong>78%</strong>
+              </div>
+              <div class="energy-meter">
+                <span></span>
+              </div>
+            </div>
+
+            <div class="summary-box">
+              <p>Saved reflections</p>
+              <strong id="savedCount">0</strong>
+            </div>
+          </aside>
+        </section>
+
+        <section class="bottom-grid" id="insights">
+          <article class="panel insight-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">Gratitude</p>
+                <h3>Three things I appreciate</h3>
+              </div>
+            </div>
+
+            <ul class="list-stack">
+              <li>Quiet time to reset after a busy afternoon.</li>
+              <li>A conversation that made me feel understood.</li>
+              <li>The small win of finishing one important task.</li>
+            </ul>
+          </article>
+
+          <article class="panel insight-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">Wins</p>
+                <h3>Momentum this week</h3>
+              </div>
+            </div>
+
+            <ul class="milestones">
+              <li>
+                <span class="dot success"></span>
+                Finished a deep-work session
+              </li>
+              <li>
+                <span class="dot success"></span>
+                Replied to messages with more patience
+              </li>
+              <li>
+                <span class="dot success"></span>
+                Said no to unnecessary distractions
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel insight-panel">
+            <div class="panel-header compact">
+              <div>
+                <p class="eyebrow accent">Next step</p>
+                <h3>Gentle intention</h3>
+              </div>
+            </div>
+
+            <div class="intention-box">
+              <p>
+                Tomorrow, I want to protect my attention and make space for calm,
+                focused work before noon.
+              </p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
